@@ -10,9 +10,9 @@ describe Film do
   end
 
   it "gets created without a theater" do
-    film = Film.new(:theater => "Marina 6")
+    film = Film.new(:name => "Fast and Furious 6")
 
-    expect(film.valid)
+    expect(film.valid?).to be_false
   end
 end
 
