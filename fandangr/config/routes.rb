@@ -1,4 +1,10 @@
 Fandangr::Application.routes.draw do
+  resources :tickets
+
+
+  resources :theaters
+
+
   resources :films
 
 
