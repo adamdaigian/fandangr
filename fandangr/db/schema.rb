@@ -11,11 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708010257) do
+ActiveRecord::Schema.define(:version => 20130708094703) do
 
   create_table "films", :force => true do |t|
     t.string   "name"
     t.text     "info"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "movies", :force => true do |t|
+    t.integer  "film_id"
+    t.integer  "theater_id"
+    t.integer  "screen_id"
+    t.integer  "ticket_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "screens", :force => true do |t|
+    t.integer  "movie_id"
+    t.integer  "theater_id"
+    t.integer  "film_id"
+    t.integer  "seat_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "seats", :force => true do |t|
+    t.integer  "number"
+    t.integer  "screen_id"
+    t.integer  "theater_id"
+    t.integer  "movie_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

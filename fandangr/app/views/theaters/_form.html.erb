@@ -23,3 +23,15 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= form_for @theater, :url => theaters_path, :method => "post" do |f| %>
+
+  <div>
+  <%= f.label :theater_id %>
+  <%= f.collection_select(:theater_id, Theater.all, :id, :name, {:prompt => "select theater"}) %>
+  </div>
+
+  <div>
+  <%= f.button %>
+  </div>
+<% end %>

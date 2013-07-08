@@ -3,7 +3,7 @@ class Ticket < ActiveRecord::Base
 
   belongs_to :movie_id
   belongs_to :screen_id
-  belongs_to :screen_id
+  belongs_to :theater_id
 
   validates :seat_id, :presence => true
   validates :movie_id :presence => true
